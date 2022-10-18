@@ -4,3 +4,5 @@ target
 .project
 .settings/
 .vscode/
+OutFile.txt
+StateCapitals.old.txt
