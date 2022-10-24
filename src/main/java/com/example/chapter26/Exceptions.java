@@ -14,14 +14,26 @@ public class Exceptions {
         Scanner myScanner = new Scanner(System.in);
 
         System.out.println("Please enter the numerator: ");
-        input = myScanner.nextLine();
-        numerator = Integer.parseInt(input);
+        try {
+            input = myScanner.nextLine();
+            numerator = Integer.parseInt(input);
+        } catch (NumberFormatException ex) {
+            System.out.println("You didn't enter a number for numerator!");
+        }
 
         System.out.println("Please enter the denominator: ");
-        input = myScanner.nextLine();
-        denominator = Integer.parseInt(input);
+        try {
+            input = myScanner.nextLine();
+            denominator = Integer.parseInt(input);
+        } catch (NumberFormatException ex) {
+            System.out.println("You didn't enter a number for denominator!");
+        }
 
-        quotient = (double) numerator / denominator;
+        try {
+            quotient = numerator / denominator;
+        } catch (ArithmeticException ex) {
+            System.out.println("Something went wrong: " + ex);
+        }
 
         System.out.println("The quotient is: " + quotient);
 
